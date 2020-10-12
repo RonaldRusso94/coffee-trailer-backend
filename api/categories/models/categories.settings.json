@@ -1,6 +1,6 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "menu-categories",
   "info": {
     "name": "menu-categories",
     "description": ""
@@ -16,8 +16,8 @@
       "required": true
     },
     "menu_items": {
-      "via": "menu_category",
-      "collection": "menu-items"
+      "collection": "menu-items",
+      "via": "menu_category"
     }
   }
 }
