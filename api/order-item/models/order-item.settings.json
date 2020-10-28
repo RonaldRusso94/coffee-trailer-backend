@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_items",
+  "info": {
+    "name": "Order-Item"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Number": {
+      "type": "integer"
+    },
+    "instructions": {
+      "type": "text"
+    },
+    "menu_item": {
+      "model": "menu-items"
+    },
+    "menu_toppings": {
+      "collection": "menu-topping"
+    },
+    "order": {
+      "via": "order_items",
+      "model": "orders"
+    }
+  }
+}

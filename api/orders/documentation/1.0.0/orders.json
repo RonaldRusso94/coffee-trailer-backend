@@ -1,82 +1,18 @@
 {
   "paths": {
-    "/users-permissions/roles/{id}": {
+    "/orders": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve a role depending on its id",
+        "description": "Find all the orders's records",
         "responses": {
           "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UsersPermissionsRole"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/users-permissions/roles": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve all role documents",
-        "responses": {
-          "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/UsersPermissionsRole"
+                    "$ref": "#/components/schemas/Orders"
                   }
                 }
               }
@@ -115,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "UsersPermissions - Role"
+          "Orders"
         ],
         "parameters": [
           {
@@ -258,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new role",
+        "description": "Create a new orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UsersPermissionsRole"
+                  "$ref": "#/components/schemas/Orders"
                 }
               }
             }
@@ -303,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "UsersPermissions - Role"
+          "Orders"
         ],
         "requestBody": {
           "description": "",
@@ -311,24 +247,28 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsersPermissionsRole"
+                "$ref": "#/components/schemas/NewOrders"
               }
             }
           }
         }
       }
     },
-    "/users-permissions/roles/{role}": {
-      "put": {
+    "/orders/count": {
+      "get": {
         "deprecated": false,
-        "description": "Update a role",
+        "description": "Retrieve the numver of orders documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UsersPermissionsRole"
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
                 }
               }
             }
@@ -366,11 +306,64 @@
         },
         "summary": "",
         "tags": [
-          "UsersPermissions - Role"
+          "Orders"
+        ],
+        "parameters": []
+      }
+    },
+    "/orders/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one orders record",
+        "responses": {
+          "200": {
+            "description": "Retrieve orders document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Orders"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Orders"
         ],
         "parameters": [
           {
-            "name": "role",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -379,6 +372,56 @@
               "type": "string"
             }
           }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single orders record",
+        "responses": {
+          "200": {
+            "description": "Retrieve orders document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Orders"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Orders"
         ],
         "requestBody": {
           "description": "",
@@ -386,18 +429,95 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewUsersPermissionsRole"
+                "$ref": "#/components/schemas/NewOrders"
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a role",
+        "description": "Delete a single orders record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "deletes a single orders based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/orders/user/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Retrieve orders document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -443,11 +563,11 @@
         },
         "summary": "",
         "tags": [
-          "UsersPermissions - Role"
+          "Orders"
         ],
         "parameters": [
           {
-            "name": "role",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -462,56 +582,102 @@
   },
   "components": {
     "schemas": {
-      "UsersPermissionsRole": {
+      "Orders": {
         "required": [
-          "id",
-          "name"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "number": {
+            "type": "string"
+          },
+          "status": {
             "type": "string",
-            "minLength": 3
+            "default": "ordering",
+            "enum": [
+              "ordering",
+              "preparing",
+              "delivering",
+              "completed"
+            ]
           },
-          "description": {
-            "type": "string"
+          "user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "orders": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
-          "type": {
-            "type": "string"
-          },
-          "permissions": {
+          "order_items": {
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "type",
-                "controller",
-                "action",
-                "enabled"
+                "id"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "type": {
+                "Number": {
+                  "type": "integer"
+                },
+                "instructions": {
                   "type": "string"
                 },
-                "controller": {
+                "menu_item": {
                   "type": "string"
                 },
-                "action": {
+                "menu_toppings": {
                   "type": "string"
                 },
-                "enabled": {
-                  "type": "boolean"
-                },
-                "policy": {
+                "order": {
                   "type": "string"
                 },
-                "role": {
-                  "type": "string"
+                "published_at": {
+                  "type": "datetime"
                 },
                 "created_by": {
                   "type": "string"
@@ -522,85 +688,37 @@
               }
             }
           },
-          "users": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "orders": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "published_at": {
+            "type": "datetime"
           }
         }
       },
-      "NewUsersPermissionsRole": {
-        "required": [
-          "name"
-        ],
+      "NewOrders": {
         "properties": {
-          "name": {
+          "number": {
+            "type": "string"
+          },
+          "status": {
             "type": "string",
-            "minLength": 3
+            "default": "ordering",
+            "enum": [
+              "ordering",
+              "preparing",
+              "delivering",
+              "completed"
+            ]
           },
-          "description": {
+          "user": {
             "type": "string"
           },
-          "type": {
-            "type": "string"
-          },
-          "permissions": {
+          "order_items": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "published_at": {
+            "type": "datetime"
           },
           "created_by": {
             "type": "string"
@@ -614,7 +732,7 @@
   },
   "tags": [
     {
-      "name": "UsersPermissions - Role"
+      "name": "Orders"
     }
   ]
 }
