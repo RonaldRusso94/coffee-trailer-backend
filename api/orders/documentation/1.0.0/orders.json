@@ -676,6 +676,9 @@
                 "order": {
                   "type": "string"
                 },
+                "quantity": {
+                  "type": "integer"
+                },
                 "published_at": {
                   "type": "datetime"
                 },

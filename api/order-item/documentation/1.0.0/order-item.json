@@ -637,6 +637,10 @@
               }
             }
           },
+          "quantity": {
+            "type": "integer",
+            "default": 1
+          },
           "published_at": {
             "type": "datetime"
           }
@@ -658,6 +662,10 @@
           },
           "order": {
             "type": "string"
+          },
+          "quantity": {
+            "type": "integer",
+            "default": 1
           },
           "published_at": {
             "type": "datetime"
