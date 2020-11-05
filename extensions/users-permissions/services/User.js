@@ -7,8 +7,10 @@
 
 module.exports = {
     async fetchAuthenticatedUser(id) {
-        debugger
         const user =  await strapi.query("user", "users-permissions").findOne({ id }, ["role", "orders"]);
+        const favorites = await strapi.query('favorite').find({user: id,  _sort: 'count:desc', _limit: 10}, ["menu_item"]);
+        const favoriteMenuItem = favorites.map(favorite => favorite.menu_item )
+        user.favorites = favoriteMenuItem
         return user;
     }
 };

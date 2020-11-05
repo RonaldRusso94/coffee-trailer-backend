@@ -3,7 +3,7 @@
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/controllers.html#core-controllers)
  * to customize this controller
  */
-
+const {sanitizeEntity } = require('strapi-utils');
 module.exports = {
     async getUserOrders(ctx) {
         const { id } = ctx.params;
@@ -36,5 +36,42 @@ module.exports = {
         }))
         console.log(ordersReturn)
         return ordersReturn;
-    }
-};
+    },
+    async update(ctx) {
+        const { id } = ctx.params;
+        const order = await strapi.query('orders').update({id}, ctx.request.body);
+        if (order.status === "completed") {
+            try {
+                const itemIds = order.order_items.map((orderItem) => orderItem.menu_item)
+                console.log(itemIds)
+
+                const favorites = await Promise.all(itemIds.map(async itemId => {
+                    const query = {
+                        user: order.user._id,
+                        menu_item: itemId,
+                    }
+                    const update = {
+                        $inc: {count: 1},
+                        $setOnInsert: {
+                            user: order.user._id,
+                            menu_item: itemId,
+                            published_at: new Date()
+                        }
+                    }
+                    const options = {
+                        new: true,
+                        upsert: true
+                    }
+                    return await strapi.query('favorite').model.findOneAndUpdate(query, update, options);
+                }))
+                
+                console.log(favorites)
+                } catch (error) {
+                console.log(error)
+            }
+            // const favorites = await strapi.query('favorites').findOne({user: order.user, });
+        }
+
+    
+        return sanitizeEntity(order, { model: strapi.models.orders });
+      },};
