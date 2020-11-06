@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/favorites": {
+    "/recipes": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the recipes's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve recipes document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Favorite"
+                    "$ref": "#/components/schemas/Recipes"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Favorite"
+          "Recipes"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new recipes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve recipes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Favorite"
+                  "$ref": "#/components/schemas/Recipes"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Favorite"
+          "Recipes"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewFavorite"
+                "$ref": "#/components/schemas/NewRecipes"
               }
             }
           }
         }
       }
     },
-    "/favorites/count": {
+    "/recipes/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of recipes documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve recipes document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Favorite"
+          "Recipes"
         ],
         "parameters": []
       }
     },
-    "/favorites/{id}": {
+    "/recipes/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one recipes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve recipes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Favorite"
+                  "$ref": "#/components/schemas/Recipes"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Favorite"
+          "Recipes"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single recipes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve recipes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Favorite"
+                  "$ref": "#/components/schemas/Recipes"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Favorite"
+          "Recipes"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewFavorite"
+                "$ref": "#/components/schemas/NewRecipes"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single recipes record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single recipes based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Favorite"
+          "Recipes"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Favorite": {
+      "Recipes": {
         "required": [
           "id"
         ],
@@ -522,9 +522,8 @@
           "id": {
             "type": "string"
           },
-          "count": {
-            "type": "integer",
-            "default": 1
+          "name": {
+            "type": "string"
           },
           "menu_item": {
             "required": [
@@ -560,7 +559,7 @@
               }
             }
           },
-          "user": {
+          "users_permissions_user": {
             "required": [
               "id",
               "username",
@@ -600,6 +599,12 @@
                   "type": "string"
                 }
               },
+              "recipes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -608,22 +613,121 @@
               }
             }
           },
+          "instructions": {
+            "type": "string"
+          },
+          "toppings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "quantity"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "menu_topping": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "datetime"
           }
         }
       },
-      "NewFavorite": {
+      "NewRecipes": {
         "properties": {
-          "count": {
-            "type": "integer",
-            "default": 1
+          "name": {
+            "type": "string"
           },
           "menu_item": {
             "type": "string"
           },
-          "user": {
+          "users_permissions_user": {
             "type": "string"
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "toppings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "quantity"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "menu_topping": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
+            }
           },
           "published_at": {
             "type": "datetime"
@@ -640,7 +744,7 @@
   },
   "tags": [
     {
-      "name": "Favorite"
+      "name": "Recipes"
     }
   ]
 }

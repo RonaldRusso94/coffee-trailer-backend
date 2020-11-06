@@ -25,14 +25,6 @@
       }
     },
     {
-      "method": "GET",
-      "path": "/orders/user/:id",
-      "handler": "orders.getUserOrders",
-      "config": {
-        "policies": []
-      }
-    },
-    {
       "method": "POST",
       "path": "/orders",
       "handler": "orders.create",

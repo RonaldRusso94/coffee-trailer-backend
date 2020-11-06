@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "order_items",
+  "collectionName": "recipes",
   "info": {
-    "name": "Order-Item",
+    "name": "recipes",
     "description": ""
   },
   "options": {
@@ -11,23 +11,19 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Number": {
-      "type": "integer"
-    },
-    "instructions": {
-      "type": "text"
+    "name": {
+      "type": "string"
     },
     "menu_item": {
       "model": "menu-items"
     },
-    "order": {
-      "model": "orders",
-      "via": "order_items"
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "recipes"
     },
-    "quantity": {
-      "type": "integer",
-      "default": 1,
-      "min": 1
+    "instructions": {
+      "type": "richtext"
     },
     "toppings": {
       "type": "component",
