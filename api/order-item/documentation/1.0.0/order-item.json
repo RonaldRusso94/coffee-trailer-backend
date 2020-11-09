@@ -575,34 +575,6 @@
               }
             }
           },
-          "menu_toppings": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "price": {
-                "type": "integer"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "order": {
             "required": [
               "id"
@@ -641,6 +613,53 @@
             "type": "integer",
             "default": 1
           },
+          "toppings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "quantity"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "menu_topping": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "datetime"
           }
@@ -657,15 +676,59 @@
           "menu_item": {
             "type": "string"
           },
-          "menu_toppings": {
-            "type": "string"
-          },
           "order": {
             "type": "string"
           },
           "quantity": {
             "type": "integer",
             "default": 1
+          },
+          "toppings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "quantity"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "menu_topping": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
+            }
           },
           "published_at": {
             "type": "datetime"

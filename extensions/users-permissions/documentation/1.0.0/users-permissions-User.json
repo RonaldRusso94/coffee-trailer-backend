@@ -1287,6 +1287,43 @@
                 }
               }
             }
+          },
+          "recipes": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "users_permissions_user": {
+                  "type": "string"
+                },
+                "instructions": {
+                  "type": "string"
+                },
+                "toppings": {
+                  "type": "component"
+                },
+                "published_at": {
+                  "type": "datetime"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1326,6 +1363,12 @@
             "type": "string"
           },
           "orders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "recipes": {
             "type": "array",
             "items": {
               "type": "string"
