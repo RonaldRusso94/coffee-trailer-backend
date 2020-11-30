@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_topings_topping_types",
+  "info": {
+    "name": "topping-types",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "menu_toppings": {
+      "collection": "menu-topping"
+    }
+  }
+}

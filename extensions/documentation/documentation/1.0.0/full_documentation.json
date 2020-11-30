@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "11/06/2020 1:15:13 PM"
+    "x-generation-date": "11/30/2020 4:36:03 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5288,6 +5288,9 @@
                 "menu_category": {
                   "type": "string"
                 },
+                "topping_types": {
+                  "type": "component"
+                },
                 "published_at": {
                   "type": "datetime"
                 },
@@ -5379,6 +5382,51 @@
               }
             }
           },
+          "topping_types": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "menu_toppings": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "datetime"
           }
@@ -5402,6 +5450,51 @@
           },
           "menu_category": {
             "type": "string"
+          },
+          "topping_types": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "menu_toppings": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           "published_at": {
             "type": "datetime"
@@ -5494,6 +5587,9 @@
               },
               "menu_category": {
                 "type": "string"
+              },
+              "topping_types": {
+                "type": "component"
               },
               "published_at": {
                 "type": "datetime"
@@ -5860,6 +5956,9 @@
               },
               "menu_category": {
                 "type": "string"
+              },
+              "topping_types": {
+                "type": "component"
               },
               "published_at": {
                 "type": "datetime"
