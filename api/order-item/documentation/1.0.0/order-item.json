@@ -564,6 +564,9 @@
               "menu_category": {
                 "type": "string"
               },
+              "topping_types": {
+                "type": "component"
+              },
               "published_at": {
                 "type": "datetime"
               },
