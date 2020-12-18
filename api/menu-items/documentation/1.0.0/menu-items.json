@@ -607,6 +607,9 @@
                     "price": {
                       "type": "integer"
                     },
+                    "topping_category": {
+                      "type": "string"
+                    },
                     "published_at": {
                       "type": "datetime"
                     },
@@ -675,6 +678,9 @@
                     },
                     "price": {
                       "type": "integer"
+                    },
+                    "topping_category": {
+                      "type": "string"
                     },
                     "published_at": {
                       "type": "datetime"

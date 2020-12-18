@@ -544,6 +544,34 @@
           "price": {
             "type": "integer"
           },
+          "topping_category": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "menu_toppings": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "datetime"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "published_at": {
             "type": "datetime"
           }
@@ -559,6 +587,9 @@
           },
           "price": {
             "type": "integer"
+          },
+          "topping_category": {
+            "type": "string"
           },
           "published_at": {
             "type": "datetime"
