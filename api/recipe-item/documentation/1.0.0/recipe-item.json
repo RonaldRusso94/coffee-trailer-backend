@@ -1,18 +1,19 @@
 {
   "paths": {
-    "/recipes": {
+    "/recipe-items": {
       "get": {
         "deprecated": false,
-        "description": "Find all the recipes's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve recipes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Recipes"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Recipes"
+          "Recipe-item"
         ],
         "parameters": [
           {
@@ -194,79 +195,16 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new recipes record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve recipes document(s)",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Recipes"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Recipes"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewRecipes"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/recipes/count": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve the numver of recipes documents",
-        "responses": {
-          "200": {
-            "description": "Retrieve recipes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,22 +244,36 @@
         },
         "summary": "",
         "tags": [
-          "Recipes"
+          "Recipe-item"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewRecipe-item"
+              }
+            }
+          }
+        }
       }
     },
-    "/recipes/{id}": {
+    "/recipe-items/count": {
       "get": {
         "deprecated": false,
-        "description": "Find one recipes record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve recipes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Recipes"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Recipes"
+          "Recipe-item"
+        ],
+        "parameters": []
+      }
+    },
+    "/recipe-items/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Recipe-item"
         ],
         "parameters": [
           {
@@ -376,14 +385,18 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single recipes record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve recipes document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Recipes"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Recipes"
+          "Recipe-item"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewRecipes"
+                "$ref": "#/components/schemas/NewRecipe-item"
               }
             }
           }
@@ -449,10 +462,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single recipes record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single recipes based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Recipes"
+          "Recipe-item"
         ],
         "parameters": [
           {
@@ -514,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Recipes": {
+      "Recipe-item": {
         "required": [
           "id"
         ],
@@ -522,94 +535,121 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "Number": {
+            "type": "integer"
+          },
+          "instructions": {
             "type": "string"
           },
-          "recipe_items": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Number": {
-                  "type": "integer"
-                },
-                "instructions": {
-                  "type": "string"
-                },
-                "menu_item": {
-                  "type": "string"
-                },
-                "quantity": {
-                  "type": "integer"
-                },
-                "toppings": {
-                  "type": "component"
-                },
-                "recipe": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "datetime"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "user": {
+          "menu_item": {
             "required": [
               "id",
-              "username",
-              "email"
+              "title",
+              "price",
+              "description"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "title": {
                 "type": "string"
               },
-              "email": {
+              "price": {
                 "type": "string"
               },
-              "provider": {
+              "description": {
                 "type": "string"
               },
-              "password": {
+              "menu_category": {
                 "type": "string"
               },
-              "resetPasswordToken": {
+              "topping_types": {
+                "type": "component"
+              },
+              "published_at": {
+                "type": "datetime"
+              },
+              "created_by": {
                 "type": "string"
               },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "toppings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "quantity"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "menu_topping": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
+            }
+          },
+          "recipe": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
                 "type": "string"
               },
-              "orders": {
+              "name": {
+                "type": "string"
+              },
+              "recipe_items": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "recipes": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "user": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"
@@ -624,18 +664,68 @@
           }
         }
       },
-      "NewRecipes": {
+      "NewRecipe-item": {
         "properties": {
-          "name": {
+          "Number": {
+            "type": "integer"
+          },
+          "instructions": {
             "type": "string"
           },
-          "recipe_items": {
+          "menu_item": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "toppings": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "object",
+              "required": [
+                "id",
+                "quantity"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "menu_topping": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
             }
           },
-          "user": {
+          "recipe": {
             "type": "string"
           },
           "published_at": {
@@ -651,9 +741,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Recipes"
-    }
-  ]
+  "tags": []
 }
