@@ -59,7 +59,7 @@
       "collection": "orders"
     },
     "recipes": {
-      "via": "users_permissions_user",
+      "via": "user",
       "collection": "recipes"
     }
   }

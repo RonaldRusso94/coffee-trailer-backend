@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipe_items",
+  "info": {
+    "name": "Recipe-Item"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Number": {
+      "type": "integer"
+    },
+    "instructions": {
+      "type": "text"
+    },
+    "menu_item": {
+      "model": "menu-items"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "toppings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "topings.menu-toppings-quantity"
+    },
+    "recipe": {
+      "via": "recipe_items",
+      "model": "recipes"
+    }
+  }
+}

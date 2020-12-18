@@ -1301,17 +1301,14 @@
                 "name": {
                   "type": "string"
                 },
-                "menu_item": {
-                  "type": "string"
+                "recipe_items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
-                "users_permissions_user": {
+                "user": {
                   "type": "string"
-                },
-                "instructions": {
-                  "type": "string"
-                },
-                "toppings": {
-                  "type": "component"
                 },
                 "published_at": {
                   "type": "datetime"

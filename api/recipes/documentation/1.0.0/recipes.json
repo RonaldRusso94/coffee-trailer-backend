@@ -525,44 +525,47 @@
           "name": {
             "type": "string"
           },
-          "menu_item": {
-            "required": [
-              "id",
-              "title",
-              "price",
-              "description"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "menu_category": {
-                "type": "string"
-              },
-              "topping_types": {
-                "type": "component"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+          "recipe_items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "Number": {
+                  "type": "integer"
+                },
+                "instructions": {
+                  "type": "string"
+                },
+                "menu_item": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "integer"
+                },
+                "toppings": {
+                  "type": "component"
+                },
+                "recipe": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "datetime"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
-          "users_permissions_user": {
+          "user": {
             "required": [
               "id",
               "username",
@@ -616,56 +619,6 @@
               }
             }
           },
-          "instructions": {
-            "type": "string"
-          },
-          "toppings": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "quantity"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "menu_topping": {
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "integer"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "quantity": {
-                  "type": "integer",
-                  "default": 1
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "datetime"
           }
@@ -676,61 +629,14 @@
           "name": {
             "type": "string"
           },
-          "menu_item": {
-            "type": "string"
-          },
-          "users_permissions_user": {
-            "type": "string"
-          },
-          "instructions": {
-            "type": "string"
-          },
-          "toppings": {
+          "recipe_items": {
             "type": "array",
             "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "quantity"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "menu_topping": {
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "integer"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "quantity": {
-                  "type": "integer",
-                  "default": 1
-                }
-              }
+              "type": "string"
             }
+          },
+          "user": {
+            "type": "string"
           },
           "published_at": {
             "type": "datetime"

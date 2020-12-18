@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/order-items": {
+    "/recipe-items": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Recipe-item"
         ],
         "parameters": [
           {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Recipe-item"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +252,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder-item"
+                "$ref": "#/components/schemas/NewRecipe-item"
               }
             }
           }
         }
       }
     },
-    "/order-items/count": {
+    "/recipe-items/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -311,12 +311,12 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Recipe-item"
         ],
         "parameters": []
       }
     },
-    "/order-items/{id}": {
+    "/recipe-items/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Recipe-item"
         ],
         "parameters": [
           {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Recipe-item"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder-item"
+                "$ref": "#/components/schemas/NewRecipe-item"
               }
             }
           }
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Recipe-item"
         ],
         "parameters": [
           {
@@ -527,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Order-item": {
+      "Recipe-item": {
         "required": [
           "id"
         ],
@@ -578,7 +578,60 @@
               }
             }
           },
-          "order": {
+          "quantity": {
+            "type": "integer"
+          },
+          "toppings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "quantity"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "menu_topping": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "topping_category": {
+                      "type": "string"
+                    },
+                    "published_at": {
+                      "type": "datetime"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "quantity": {
+                  "type": "integer",
+                  "default": 1
+                }
+              }
+            }
+          },
+          "recipe": {
             "required": [
               "id"
             ],
@@ -586,20 +639,17 @@
               "id": {
                 "type": "string"
               },
-              "number": {
+              "name": {
                 "type": "string"
               },
-              "status": {
-                "type": "string"
-              },
-              "user": {
-                "type": "string"
-              },
-              "order_items": {
+              "recipe_items": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "user": {
+                "type": "string"
               },
               "published_at": {
                 "type": "datetime"
@@ -612,66 +662,12 @@
               }
             }
           },
-          "quantity": {
-            "type": "integer",
-            "default": 1
-          },
-          "toppings": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "quantity"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "menu_topping": {
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "integer"
-                    },
-                    "topping_category": {
-                      "type": "string"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "quantity": {
-                  "type": "integer",
-                  "default": 1
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "datetime"
           }
         }
       },
-      "NewOrder-item": {
+      "NewRecipe-item": {
         "properties": {
           "Number": {
             "type": "integer"
@@ -682,12 +678,8 @@
           "menu_item": {
             "type": "string"
           },
-          "order": {
-            "type": "string"
-          },
           "quantity": {
-            "type": "integer",
-            "default": 1
+            "type": "integer"
           },
           "toppings": {
             "type": "array",
@@ -738,6 +730,9 @@
                 }
               }
             }
+          },
+          "recipe": {
+            "type": "string"
           },
           "published_at": {
             "type": "datetime"

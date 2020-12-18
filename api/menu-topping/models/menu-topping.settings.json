@@ -19,6 +19,10 @@
     },
     "price": {
       "type": "biginteger"
+    },
+    "topping_category": {
+      "via": "menu_toppings",
+      "model": "topping-categories"
     }
   }
 }

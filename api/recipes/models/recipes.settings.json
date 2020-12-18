@@ -14,21 +14,14 @@
     "name": {
       "type": "string"
     },
-    "menu_item": {
-      "model": "menu-items"
+    "recipe_items": {
+      "collection": "recipe-item",
+      "via": "recipe"
     },
-    "users_permissions_user": {
+    "user": {
       "plugin": "users-permissions",
       "model": "user",
       "via": "recipes"
-    },
-    "instructions": {
-      "type": "richtext"
-    },
-    "toppings": {
-      "type": "component",
-      "repeatable": true,
-      "component": "topings.menu-toppings-quantity"
     }
   }
 }

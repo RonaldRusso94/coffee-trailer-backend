@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/order-items": {
+    "/topping-categories": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the topping-categories's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve topping-categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Topping-categories"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new topping-categories record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve topping-categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Topping-categories"
         ],
         "requestBody": {
           "description": "",
@@ -252,20 +252,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder-item"
+                "$ref": "#/components/schemas/NewTopping-categories"
               }
             }
           }
         }
       }
     },
-    "/order-items/count": {
+    "/topping-categories/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of topping-categories documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve topping-categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -311,18 +311,18 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Topping-categories"
         ],
         "parameters": []
       }
     },
-    "/order-items/{id}": {
+    "/topping-categories/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one topping-categories record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve topping-categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -368,7 +368,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Topping-categories"
         ],
         "parameters": [
           {
@@ -385,10 +385,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single topping-categories record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve topping-categories document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -434,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Topping-categories"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder-item"
+                "$ref": "#/components/schemas/NewTopping-categories"
               }
             }
           }
@@ -462,10 +462,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single topping-categories record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single topping-categories based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Topping-categories"
         ],
         "parameters": [
           {
@@ -527,7 +527,7 @@
   },
   "components": {
     "schemas": {
-      "Order-item": {
+      "Topping-categories": {
         "required": [
           "id"
         ],
@@ -535,133 +535,39 @@
           "id": {
             "type": "string"
           },
-          "Number": {
-            "type": "integer"
-          },
-          "instructions": {
+          "category": {
             "type": "string"
           },
-          "menu_item": {
-            "required": [
-              "id",
-              "title",
-              "price",
-              "description"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "price": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "menu_category": {
-                "type": "string"
-              },
-              "topping_types": {
-                "type": "component"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "order": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "number": {
-                "type": "string"
-              },
-              "status": {
-                "type": "string"
-              },
-              "user": {
-                "type": "string"
-              },
-              "order_items": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "quantity": {
-            "type": "integer",
-            "default": 1
-          },
-          "toppings": {
+          "menu_toppings": {
             "type": "array",
             "items": {
-              "type": "object",
               "required": [
-                "id",
-                "quantity"
+                "id"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "menu_topping": {
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "integer"
-                    },
-                    "topping_category": {
-                      "type": "string"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
+                "title": {
+                  "type": "string"
                 },
-                "quantity": {
-                  "type": "integer",
-                  "default": 1
+                "description": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "integer"
+                },
+                "topping_category": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "datetime"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
                 }
               }
             }
@@ -671,72 +577,15 @@
           }
         }
       },
-      "NewOrder-item": {
+      "NewTopping-categories": {
         "properties": {
-          "Number": {
-            "type": "integer"
-          },
-          "instructions": {
+          "category": {
             "type": "string"
           },
-          "menu_item": {
-            "type": "string"
-          },
-          "order": {
-            "type": "string"
-          },
-          "quantity": {
-            "type": "integer",
-            "default": 1
-          },
-          "toppings": {
+          "menu_toppings": {
             "type": "array",
             "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "quantity"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "menu_topping": {
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "integer"
-                    },
-                    "topping_category": {
-                      "type": "string"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "quantity": {
-                  "type": "integer",
-                  "default": 1
-                }
-              }
+              "type": "string"
             }
           },
           "published_at": {

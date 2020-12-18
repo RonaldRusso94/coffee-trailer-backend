@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topping_categories",
+  "info": {
+    "name": "Topping-Categories",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "category": {
+      "type": "string"
+    },
+    "menu_toppings": {
+      "collection": "menu-topping",
+      "via": "topping_category"
+    }
+  }
+}
