@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promos",
+  "info": {
+    "name": "Promos"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "amount": {
+      "type": "integer"
+    },
+    "percentage": {
+      "type": "integer"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1276,6 +1276,9 @@
                     "type": "string"
                   }
                 },
+                "promos": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "datetime"
                 },
@@ -1301,14 +1304,14 @@
                 "name": {
                   "type": "string"
                 },
+                "user": {
+                  "type": "string"
+                },
                 "recipe_items": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
-                },
-                "user": {
-                  "type": "string"
                 },
                 "published_at": {
                   "type": "datetime"

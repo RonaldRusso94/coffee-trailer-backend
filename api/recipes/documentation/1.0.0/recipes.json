@@ -525,46 +525,6 @@
           "name": {
             "type": "string"
           },
-          "recipe_items": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Number": {
-                  "type": "integer"
-                },
-                "instructions": {
-                  "type": "string"
-                },
-                "menu_item": {
-                  "type": "string"
-                },
-                "quantity": {
-                  "type": "integer"
-                },
-                "toppings": {
-                  "type": "component"
-                },
-                "recipe": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "datetime"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "user": {
             "required": [
               "id",
@@ -619,6 +579,43 @@
               }
             }
           },
+          "recipe_items": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "Number": {
+                  "type": "integer"
+                },
+                "instructions": {
+                  "type": "string"
+                },
+                "menu_items": {
+                  "type": "component"
+                },
+                "menu_toppings": {
+                  "type": "component"
+                },
+                "recipe": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "datetime"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "datetime"
           }
@@ -629,14 +626,14 @@
           "name": {
             "type": "string"
           },
+          "user": {
+            "type": "string"
+          },
           "recipe_items": {
             "type": "array",
             "items": {
               "type": "string"
             }
-          },
-          "user": {
-            "type": "string"
           },
           "published_at": {
             "type": "datetime"

@@ -28,10 +28,8 @@
       "model": "categories",
       "via": "menu_items"
     },
-    "topping_types": {
-      "type": "component",
-      "repeatable": true,
-      "component": "topings.topping-types"
+    "menu_toppings": {
+      "collection": "menu-topping"
     }
   }
 }

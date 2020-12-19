@@ -551,8 +551,8 @@
                 "menu_category": {
                   "type": "string"
                 },
-                "topping_types": {
-                  "type": "component"
+                "menu_toppings": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "datetime"

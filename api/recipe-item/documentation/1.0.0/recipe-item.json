@@ -541,47 +541,61 @@
           "instructions": {
             "type": "string"
           },
-          "menu_item": {
+          "menu_items": {
+            "type": "object",
             "required": [
-              "id",
-              "title",
-              "price",
-              "description"
+              "id"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "title": {
-                "type": "string"
+              "quantity": {
+                "type": "integer"
               },
-              "price": {
-                "type": "string"
+              "current_price": {
+                "type": "integer"
               },
-              "description": {
-                "type": "string"
-              },
-              "menu_category": {
-                "type": "string"
-              },
-              "topping_types": {
-                "type": "component"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+              "menu_item": {
+                "required": [
+                  "id",
+                  "title",
+                  "price",
+                  "description"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "menu_category": {
+                    "type": "string"
+                  },
+                  "menu_toppings": {
+                    "type": "string"
+                  },
+                  "published_at": {
+                    "type": "datetime"
+                  },
+                  "created_by": {
+                    "type": "string"
+                  },
+                  "updated_by": {
+                    "type": "string"
+                  }
+                }
               }
             }
           },
-          "quantity": {
-            "type": "integer"
-          },
-          "toppings": {
+          "menu_toppings": {
             "type": "array",
             "items": {
               "type": "object",
@@ -627,6 +641,9 @@
                 "quantity": {
                   "type": "integer",
                   "default": 1
+                },
+                "current_price": {
+                  "type": "integer"
                 }
               }
             }
@@ -642,14 +659,14 @@
               "name": {
                 "type": "string"
               },
+              "user": {
+                "type": "string"
+              },
               "recipe_items": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
-              },
-              "user": {
-                "type": "string"
               },
               "published_at": {
                 "type": "datetime"
@@ -675,13 +692,61 @@
           "instructions": {
             "type": "string"
           },
-          "menu_item": {
-            "type": "string"
+          "menu_items": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "quantity": {
+                "type": "integer"
+              },
+              "current_price": {
+                "type": "integer"
+              },
+              "menu_item": {
+                "required": [
+                  "id",
+                  "title",
+                  "price",
+                  "description"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "menu_category": {
+                    "type": "string"
+                  },
+                  "menu_toppings": {
+                    "type": "string"
+                  },
+                  "published_at": {
+                    "type": "datetime"
+                  },
+                  "created_by": {
+                    "type": "string"
+                  },
+                  "updated_by": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
           },
-          "quantity": {
-            "type": "integer"
-          },
-          "toppings": {
+          "menu_toppings": {
             "type": "array",
             "items": {
               "type": "object",
@@ -727,6 +792,9 @@
                 "quantity": {
                   "type": "integer",
                   "default": 1
+                },
+                "current_price": {
+                  "type": "integer"
                 }
               }
             }

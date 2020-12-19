@@ -17,9 +17,6 @@
     "instructions": {
       "type": "text"
     },
-    "menu_item": {
-      "model": "menu-items"
-    },
     "order": {
       "model": "orders",
       "via": "order_items"
@@ -29,10 +26,15 @@
       "default": 1,
       "min": 1
     },
-    "toppings": {
+    "menu_toppings": {
       "type": "component",
       "repeatable": true,
       "component": "topings.menu-toppings-quantity"
+    },
+    "menu_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "topings.menu-items"
     }
   }
 }

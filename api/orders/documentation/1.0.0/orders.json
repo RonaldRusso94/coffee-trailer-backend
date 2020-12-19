@@ -605,16 +605,16 @@
                 "instructions": {
                   "type": "string"
                 },
-                "menu_item": {
-                  "type": "string"
-                },
                 "order": {
                   "type": "string"
                 },
                 "quantity": {
                   "type": "integer"
                 },
-                "toppings": {
+                "menu_toppings": {
+                  "type": "component"
+                },
+                "menu_items": {
                   "type": "component"
                 },
                 "published_at": {
@@ -626,6 +626,34 @@
                 "updated_by": {
                   "type": "string"
                 }
+              }
+            }
+          },
+          "promos": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "integer"
+              },
+              "percentage": {
+                "type": "integer"
+              },
+              "active": {
+                "type": "boolean"
+              },
+              "published_at": {
+                "type": "datetime"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -657,6 +685,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "promos": {
+            "type": "string"
           },
           "published_at": {
             "type": "datetime"

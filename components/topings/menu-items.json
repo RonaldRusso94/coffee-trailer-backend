@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_topings_menu_items",
+  "info": {
+    "name": "Menu-Items",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "quantity": {
+      "type": "integer"
+    },
+    "current_price": {
+      "type": "integer"
+    },
+    "menu_item": {
+      "model": "menu-items"
+    }
+  }
+}
