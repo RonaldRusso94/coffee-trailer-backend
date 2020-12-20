@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "recipe_items",
   "info": {
-    "name": "Recipe-Item"
+    "name": "Recipe-Item",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,13 +17,12 @@
     "instructions": {
       "type": "text"
     },
-    "menu_item": {
-      "model": "menu-items"
+    "menu_items": {
+      "type": "component",
+      "repeatable": false,
+      "component": "topings.menu-items"
     },
-    "quantity": {
-      "type": "integer"
-    },
-    "toppings": {
+    "menu_toppings": {
       "type": "component",
       "repeatable": true,
       "component": "topings.menu-toppings-quantity"

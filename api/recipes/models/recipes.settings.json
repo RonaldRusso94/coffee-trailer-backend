@@ -14,14 +14,14 @@
     "name": {
       "type": "string"
     },
-    "recipe_items": {
-      "collection": "recipe-item",
-      "via": "recipe"
-    },
     "user": {
       "plugin": "users-permissions",
       "model": "user",
       "via": "recipes"
+    },
+    "recipe_items": {
+      "collection": "recipe-item",
+      "via": "recipe"
     }
   }
 }

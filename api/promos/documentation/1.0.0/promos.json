@@ -1,19 +1,18 @@
 {
   "paths": {
-    "/order-items": {
+    "/promos": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the promos's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve promos document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Promos"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Promos"
         ],
         "parameters": [
           {
@@ -195,18 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new promos record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve promos document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Promos"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Promos"
         ],
         "requestBody": {
           "description": "",
@@ -252,26 +247,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder-item"
+                "$ref": "#/components/schemas/NewPromos"
               }
             }
           }
         }
       }
     },
-    "/order-items/count": {
+    "/promos/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of promos documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve promos document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,26 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Promos"
         ],
         "parameters": []
       }
     },
-    "/order-items/{id}": {
+    "/promos/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one promos record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve promos document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Promos"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Promos"
         ],
         "parameters": [
           {
@@ -385,18 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single promos record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve promos document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Promos"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Promos"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrder-item"
+                "$ref": "#/components/schemas/NewPromos"
               }
             }
           }
@@ -462,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single promos record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single promos based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Order-item"
+          "Promos"
         ],
         "parameters": [
           {
@@ -527,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Order-item": {
+      "Promos": {
         "required": [
           "id"
         ],
@@ -535,292 +522,30 @@
           "id": {
             "type": "string"
           },
-          "Number": {
+          "amount": {
             "type": "integer"
           },
-          "instructions": {
-            "type": "string"
+          "percentage": {
+            "type": "integer"
           },
-          "order": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "number": {
-                "type": "string"
-              },
-              "status": {
-                "type": "string"
-              },
-              "user": {
-                "type": "string"
-              },
-              "order_items": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "promos": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "datetime"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "quantity": {
-            "type": "integer",
-            "default": 1
-          },
-          "menu_toppings": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "quantity"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "menu_topping": {
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "integer"
-                    },
-                    "topping_category": {
-                      "type": "string"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "quantity": {
-                  "type": "integer",
-                  "default": 1
-                },
-                "current_price": {
-                  "type": "integer"
-                }
-              }
-            }
-          },
-          "menu_items": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "quantity": {
-                  "type": "integer"
-                },
-                "current_price": {
-                  "type": "integer"
-                },
-                "menu_item": {
-                  "required": [
-                    "id",
-                    "title",
-                    "price",
-                    "description"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "menu_category": {
-                      "type": "string"
-                    },
-                    "menu_toppings": {
-                      "type": "string"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
+          "active": {
+            "type": "boolean"
           },
           "published_at": {
             "type": "datetime"
           }
         }
       },
-      "NewOrder-item": {
+      "NewPromos": {
         "properties": {
-          "Number": {
+          "amount": {
             "type": "integer"
           },
-          "instructions": {
-            "type": "string"
+          "percentage": {
+            "type": "integer"
           },
-          "order": {
-            "type": "string"
-          },
-          "quantity": {
-            "type": "integer",
-            "default": 1
-          },
-          "menu_toppings": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "quantity"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "menu_topping": {
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "integer"
-                    },
-                    "topping_category": {
-                      "type": "string"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "quantity": {
-                  "type": "integer",
-                  "default": 1
-                },
-                "current_price": {
-                  "type": "integer"
-                }
-              }
-            }
-          },
-          "menu_items": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "quantity": {
-                  "type": "integer"
-                },
-                "current_price": {
-                  "type": "integer"
-                },
-                "menu_item": {
-                  "required": [
-                    "id",
-                    "title",
-                    "price",
-                    "description"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "menu_category": {
-                      "type": "string"
-                    },
-                    "menu_toppings": {
-                      "type": "string"
-                    },
-                    "published_at": {
-                      "type": "datetime"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
+          "active": {
+            "type": "boolean"
           },
           "published_at": {
             "type": "datetime"
@@ -835,5 +560,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Promos"
+    }
+  ]
 }
