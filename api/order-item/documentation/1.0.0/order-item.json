@@ -630,7 +630,8 @@
                   "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 }
               }
             }
@@ -647,10 +648,12 @@
                   "type": "string"
                 },
                 "quantity": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 },
                 "menu_item": {
                   "required": [
@@ -760,7 +763,8 @@
                   "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 }
               }
             }
@@ -777,10 +781,12 @@
                   "type": "string"
                 },
                 "quantity": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 },
                 "menu_item": {
                   "required": [

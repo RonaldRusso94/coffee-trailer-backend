@@ -2,15 +2,20 @@
   "collectionName": "components_topings_menu_items",
   "info": {
     "name": "Menu-Items",
-    "icon": "ad"
+    "icon": "ad",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "quantity": {
-      "type": "integer"
+      "type": "integer",
+      "min": 1,
+      "default": 1
     },
     "current_price": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0,
+      "min": 0
     },
     "menu_item": {
       "model": "menu-items"

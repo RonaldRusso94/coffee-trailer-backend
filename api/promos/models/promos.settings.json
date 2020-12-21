@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "promos",
   "info": {
-    "name": "Promos"
+    "name": "Promos",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,10 +12,12 @@
   },
   "attributes": {
     "amount": {
-      "type": "integer"
+      "type": "integer",
+      "min": 0
     },
     "percentage": {
-      "type": "integer"
+      "type": "integer",
+      "min": 0
     },
     "active": {
       "type": "boolean"
