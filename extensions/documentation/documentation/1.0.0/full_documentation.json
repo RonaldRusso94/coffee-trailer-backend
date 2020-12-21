@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/19/2020 3:21:56 PM"
+    "x-generation-date": "12/21/2020 12:55:47 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7188,7 +7188,8 @@
                   "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 }
               }
             }
@@ -7205,10 +7206,12 @@
                   "type": "string"
                 },
                 "quantity": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 },
                 "menu_item": {
                   "required": [
@@ -7318,7 +7321,8 @@
                   "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 }
               }
             }
@@ -7335,10 +7339,12 @@
                   "type": "string"
                 },
                 "quantity": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 },
                 "menu_item": {
                   "required": [
@@ -7645,10 +7651,12 @@
                 "type": "string"
               },
               "quantity": {
-                "type": "integer"
+                "type": "integer",
+                "default": 1
               },
               "current_price": {
-                "type": "integer"
+                "type": "integer",
+                "default": 0
               },
               "menu_item": {
                 "required": [
@@ -7737,7 +7745,8 @@
                   "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 }
               }
             }
@@ -7796,10 +7805,12 @@
                 "type": "string"
               },
               "quantity": {
-                "type": "integer"
+                "type": "integer",
+                "default": 1
               },
               "current_price": {
-                "type": "integer"
+                "type": "integer",
+                "default": 0
               },
               "menu_item": {
                 "required": [
@@ -7888,7 +7899,8 @@
                   "default": 1
                 },
                 "current_price": {
-                  "type": "integer"
+                  "type": "integer",
+                  "default": 0
                 }
               }
             }
