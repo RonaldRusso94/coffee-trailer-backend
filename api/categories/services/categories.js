@@ -11,7 +11,10 @@ module.exports = {
     const categoriesReturn = await Promise.all(categories.map(async (category) => {
       const menuItems = await Promise.all(category.menu_items.map(async (menuItem) => {
         const menuToppings = await strapi.query('menu-topping').find({id:{$in: menuItem.menu_toppings}}, populate)
-        return menuToppings
+        return {
+          ...menuItem,
+          menu_toppings: menuToppings
+        }
       }))
       return {
         ...category,
