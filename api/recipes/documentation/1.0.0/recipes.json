@@ -571,6 +571,9 @@
                   "type": "string"
                 }
               },
+              "notification_tokens": {
+                "type": "component"
+              },
               "created_by": {
                 "type": "string"
               },

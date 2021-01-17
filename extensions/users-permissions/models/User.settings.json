@@ -55,12 +55,17 @@
       "configurable": false
     },
     "orders": {
-      "via": "user",
-      "collection": "orders"
+      "collection": "orders",
+      "via": "user"
     },
     "recipes": {
-      "via": "user",
-      "collection": "recipes"
+      "collection": "recipes",
+      "via": "user"
+    },
+    "notification_tokens": {
+      "type": "component",
+      "repeatable": true,
+      "component": "topings.notifications-tokens"
     }
   }
 }

@@ -25,9 +25,9 @@
       "default": "ordering"
     },
     "user": {
+      "via": "orders",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "orders"
+      "model": "user"
     },
     "order_items": {
       "via": "order",

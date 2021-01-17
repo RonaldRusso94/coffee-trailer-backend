@@ -581,6 +581,9 @@
                   "type": "string"
                 }
               },
+              "notification_tokens": {
+                "type": "component"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -616,6 +619,9 @@
                 },
                 "menu_items": {
                   "type": "component"
+                },
+                "size": {
+                  "type": "string"
                 },
                 "published_at": {
                   "type": "datetime"
