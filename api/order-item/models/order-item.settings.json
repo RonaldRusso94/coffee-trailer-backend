@@ -35,6 +35,9 @@
       "type": "component",
       "repeatable": true,
       "component": "topings.menu-items"
+    },
+    "size": {
+      "type": "string"
     }
   }
 }

@@ -15,9 +15,9 @@
       "type": "string"
     },
     "user": {
+      "via": "recipes",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "recipes"
+      "model": "user"
     },
     "recipe_items": {
       "collection": "recipe-item",

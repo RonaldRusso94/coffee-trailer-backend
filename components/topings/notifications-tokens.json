@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_topings_notifications_tokens",
+  "info": {
+    "name": "notifications_tokens",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "token": {
+      "type": "string"
+    }
+  }
+}

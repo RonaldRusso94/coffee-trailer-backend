@@ -1324,6 +1324,23 @@
                 }
               }
             }
+          },
+          "notification_tokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1372,6 +1389,23 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "notification_tokens": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                }
+              }
             }
           },
           "created_by": {
