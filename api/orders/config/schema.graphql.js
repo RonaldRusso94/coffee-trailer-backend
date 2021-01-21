@@ -7,7 +7,7 @@ module.exports = {
     order_items: [OrderItem]
     }
     extend type Orders {
-      price: Int
+      price: Float
     }
     `,
   query: `
