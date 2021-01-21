@@ -13,7 +13,7 @@
       "default": 1
     },
     "current_price": {
-      "type": "integer",
+      "type": "decimal",
       "default": 0,
       "min": 0
     },

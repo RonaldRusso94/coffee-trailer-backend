@@ -555,7 +555,7 @@
                 "default": 1
               },
               "current_price": {
-                "type": "integer",
+                "type": "number",
                 "default": 0
               },
               "menu_item": {
@@ -645,7 +645,7 @@
                   "default": 1
                 },
                 "current_price": {
-                  "type": "integer",
+                  "type": "number",
                   "default": 0
                 }
               }
@@ -709,7 +709,7 @@
                 "default": 1
               },
               "current_price": {
-                "type": "integer",
+                "type": "number",
                 "default": 0
               },
               "menu_item": {
@@ -799,7 +799,7 @@
                   "default": 1
                 },
                 "current_price": {
-                  "type": "integer",
+                  "type": "number",
                   "default": 0
                 }
               }
